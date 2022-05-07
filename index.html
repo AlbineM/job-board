@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <title>ECF FRONTEND MISERY Albine</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png">
+</head>
+<body>
+    <div id="preloader"></div>
+    <header>
+        <nav class="main-nav">
+            <a class="logo-name" href="/index.html">
+                <img src="assets/logo.svg" style="height: 30px" alt="logo Devjobs">
+            </a>
+            <img class="icon-sun" src="/assets/icon-sun.svg"alt="sun for light mode">
+                <label class="toggle">
+                    <input type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
+            <img class="icon-moon" src="/assets/icon-moon.svg" alt="moon for dark mode">
+        </nav>
+    </header>
+    <main class="jobs-list">
+        <div role="nav" class="search-zone card">
+            <label class="multi-filter-zone">
+                <input type="search" class="search-input text-search-input">
+            </label>
+            <div class="modal">
+                <div class="filter-card card">
+                    <label class="modal-location-filter-zone">
+                        <input type="search" class="search-input filter-search-input" placeholder="Filter by location...">
+                    </label>
+                
+                    <hr>
+                    <label class="modal-full-time-search-label" for="modal-full-time-checkbox">
+                    <input type="checkbox" class="modal-full-time-search-input" name="full-time-only" id="modal-full-time-checkbox">
+                    Full time only</label>
+                    <button class="modal-search-btn violet-btn get-filters">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <label class="location-filter-zone">
+                <img class="icon-location" src="/assets/icon-location.svg" alt="location icon">
+                <input type="search" class="search-input filter-search-input" placeholder="Filter by location...">
+            </label>
+            <label class="full-time-search-label" for="full-time-checkbox">
+                <input type="checkbox" class="full-time-search-input" name="full-time-only" id="full-time-checkbox">
+            </label>
+            <button class="filter-button" id="filter-icon-mobile">
+            </button>
+            <button class="search-btn get-filters"></button>
+            <button class="modal-search-btn-hidden violet-btn get-filters">
+                Search
+            </button>
+        </div>
+        <button class="load-more violet-btn">
+            Load More
+        </button>
+    </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/dom_index.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+div[class*="-card"] {
+    padding: calc(var(--card-padding) * 2);
+}
+
+.job-record-section {
+    display: grid;
+    max-width: 600px;
+    margin: 0 auto 100px auto;
+}
+
+/* COMPANY CARD */
+
+.card.company-card {
+    position: relative;
+    bottom: 40px;
+    height: auto;
+    justify-content: space-between;
+}
+
+.company-card::before {
+    display: flex; 
+    width: 110px; 
+    height: 115px; 
+    position: absolute; 
+    border-radius: var(--common-border-radius) 0 0 var(--common-border-radius); 
+    top: 0; 
+    left : 0; 
+    padding: var(--padding-medium); 
+    z-index: 10;
+}
+
+button.company-website-link {
+    padding: 0;
+    min-height: 38px;
+    max-height: 38px;
+    margin-left: auto;
+}
+
+h2.comany-name {
+    color: var(--text)
+}
+
+button.company-website-link a {
+    padding-right: var(--buttons-padding-right-left);
+    padding-left: var(--buttons-padding-right-left);
+}
+
+.company-card > .company {
+    position: relative;
+    left: calc(100px + var(--card-padding));
+}
+
+/* MAIN SECTION */
+
+.job-record-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.job {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    grid-template-rows: auto;
+    margin: var(--card-padding) 0;
+    justify-content: center;
+}
+
+div[class*="-paragraph"] 
+, p.company-description {
+    padding-top: var(--card-padding);
+    margin-bottom: var(--card-padding);
+}
+
+    div[class*="-paragraph"] > * {
+        margin-bottom: var(--card-padding);
+    }
+
+.upload-time
+,.job-location
+,.job-title {
+    grid-column: 1/2;
+}
+
+@counter-style violet-numbers {
+    system: numeric;
+    symbols: 1 2 3 4 5 6 7 8 9;
+    suffix: " ...";
+    color: var(--violet);
+}
+
+/* ORDERED LIST */
+.tasks-list {
+    /* list-style: violet-numbers; */
+    /* counter-reset: violet-numbers; */
+    padding-left: var(--padding-medium);
+    margin-left: var(--margin-medium);
+}
+
+.tasks-items-list {
+    /* list-style: violet-numbers; */
+    margin-left: 3em;
+    line-height: 26px;
+}
+
+
+li::marker {
+    color: var(--violet);
+}
+
+/* UNORDERED LIST */
+
+.requirements-list {
+    list-style: disc;
+    padding-left: var(--padding-medium);
+    margin-left: var(--margin-medium);
+}
+
+/* FOOTER */
+
+.company-description {
+    grid-column: 1/-1;
+}
+
+.job > .application {
+    grid-row: 2/3;
+    grid-column: 2/-1;
+}
+
+.job-detail-footer {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--card-bg);
+    color: var(--text);
+    width: 100vw;
+}
+
+.job-detail-footer-content .company-name {
+    color: var(--grey);
+}
+
+.job-detail-footer-content {
+    display: flex;
+    padding: var(--card-padding);
+    justify-content: space-between;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.job-detail .application {
+    height: auto;
+}
+
+
+@media screen and (max-width: 376px) {
+
+    .company-card {
+        flex-direction: column;
+        background-image: unset;
+        text-align: center;
+    }
+
+    .company-card::before {
+        content: url(/assets/maker.svg);
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: -20px;
+        left: calc(50% - 20px);
+    }
+
+    .company-card >.company {
+        position: unset;
+        left: unset;
+    }
+
+    .job  {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .job > .application {
+        margin-top: calc( var(--margin-medium) * 2)
+    }
+    
+    .job-detail-footer-content > .company {
+        display: none;
+    }
+
+    .job-detail-footer-content > .application {
+        width: 100%;
+    }
+}
